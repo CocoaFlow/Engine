@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC0119FD2DAE007D77E9 /* Engine.framework */; };
 		DAEA5E3619CF1EBE004F822C /* Engine.h in Headers */ = {isa = PBXBuildFile; fileRef = DAEA5E3519CF1EBE004F822C /* Engine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAEA5E3C19CF1EBE004F822C /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEA5E3019CF1EBE004F822C /* Engine.framework */; };
 		DAEA5E4319CF1EBE004F822C /* EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5E4219CF1EBE004F822C /* EngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DA22CC0D19FD2DAF007D77E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAEA5E2719CF1EBE004F822C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA22CC0019FD2DAE007D77E9;
+			remoteInfo = Engine;
+		};
 		DAEA5E3D19CF1EBE004F822C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DAEA5E2719CF1EBE004F822C /* Project object */;
@@ -23,15 +31,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA22CC0119FD2DAE007D77E9 /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA22CC0B19FD2DAE007D77E9 /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E3019CF1EBE004F822C /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E3419CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAEA5E3519CF1EBE004F822C /* Engine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
-		DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = EngineTests.xctest; path = "Engine-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E4119CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAEA5E4219CF1EBE004F822C /* EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DA22CBFD19FD2DAE007D77E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA22CC0819FD2DAE007D77E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAEA5E2C19CF1EBE004F822C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +89,8 @@
 			children = (
 				DAEA5E3019CF1EBE004F822C /* Engine.framework */,
 				DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */,
+				DA22CC0119FD2DAE007D77E9 /* Engine.framework */,
+				DA22CC0B19FD2DAE007D77E9 /* EngineTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +132,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		DA22CBFE19FD2DAE007D77E9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAEA5E2D19CF1EBE004F822C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,6 +150,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DA22CC0019FD2DAE007D77E9 /* Engine-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA22CC1819FD2DAF007D77E9 /* Build configuration list for PBXNativeTarget "Engine-iOS" */;
+			buildPhases = (
+				DA22CBFC19FD2DAE007D77E9 /* Sources */,
+				DA22CBFD19FD2DAE007D77E9 /* Frameworks */,
+				DA22CBFE19FD2DAE007D77E9 /* Headers */,
+				DA22CBFF19FD2DAE007D77E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Engine-iOS";
+			productName = Engine;
+			productReference = DA22CC0119FD2DAE007D77E9 /* Engine.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA22CC0A19FD2DAE007D77E9 /* Engine-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA22CC1919FD2DAF007D77E9 /* Build configuration list for PBXNativeTarget "Engine-iOSTests" */;
+			buildPhases = (
+				DA22CC0719FD2DAE007D77E9 /* Sources */,
+				DA22CC0819FD2DAE007D77E9 /* Frameworks */,
+				DA22CC0919FD2DAE007D77E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA22CC0E19FD2DAF007D77E9 /* PBXTargetDependency */,
+			);
+			name = "Engine-iOSTests";
+			productName = EngineTests;
+			productReference = DA22CC0B19FD2DAE007D77E9 /* EngineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DAEA5E2F19CF1EBE004F822C /* Engine-Mac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAEA5E4619CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine-Mac" */;
@@ -161,6 +231,12 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = CocoaFlow;
 				TargetAttributes = {
+					DA22CC0019FD2DAE007D77E9 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					DA22CC0A19FD2DAE007D77E9 = {
+						CreatedOnToolsVersion = 6.1;
+					};
 					DAEA5E2F19CF1EBE004F822C = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -183,11 +259,27 @@
 			targets = (
 				DAEA5E2F19CF1EBE004F822C /* Engine-Mac */,
 				DAEA5E3A19CF1EBE004F822C /* Engine-MacTests */,
+				DA22CC0019FD2DAE007D77E9 /* Engine-iOS */,
+				DA22CC0A19FD2DAE007D77E9 /* Engine-iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DA22CBFF19FD2DAE007D77E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA22CC0919FD2DAE007D77E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAEA5E2E19CF1EBE004F822C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +297,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DA22CBFC19FD2DAE007D77E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA22CC0719FD2DAE007D77E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAEA5E2B19CF1EBE004F822C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +329,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DA22CC0E19FD2DAF007D77E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA22CC0019FD2DAE007D77E9 /* Engine-iOS */;
+			targetProxy = DA22CC0D19FD2DAF007D77E9 /* PBXContainerItemProxy */;
+		};
 		DAEA5E3E19CF1EBE004F822C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DAEA5E2F19CF1EBE004F822C /* Engine-Mac */;
@@ -231,6 +342,84 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DA22CC1419FD2DAF007D77E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Engine/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = Engine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA22CC1519FD2DAF007D77E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Engine/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = Engine;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA22CC1619FD2DAF007D77E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EngineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DA22CC1719FD2DAF007D77E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EngineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		DAEA5E4419CF1EBE004F822C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -381,6 +570,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA22CC1819FD2DAF007D77E9 /* Build configuration list for PBXNativeTarget "Engine-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA22CC1419FD2DAF007D77E9 /* Debug */,
+				DA22CC1519FD2DAF007D77E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA22CC1919FD2DAF007D77E9 /* Build configuration list for PBXNativeTarget "Engine-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA22CC1619FD2DAF007D77E9 /* Debug */,
+				DA22CC1719FD2DAF007D77E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DAEA5E2A19CF1EBE004F822C /* Build configuration list for PBXProject "Engine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
