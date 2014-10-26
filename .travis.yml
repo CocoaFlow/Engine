@@ -1,0 +1,4 @@
+language: objective-c
+
+before_install: git submodule update --init --recursive
+script: xcodebuild -workspace Engine.xcworkspace -scheme Engine-iOS clean test
