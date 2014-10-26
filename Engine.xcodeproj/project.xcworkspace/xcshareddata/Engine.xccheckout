@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7AD42AA1-FE84-4A10-BF88-C257BFBD81B7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Engine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>071DB5F7CAD227F044BD4D711846D4B6335BD28F</key>
+		<string>github.com:CocoaFlow/Engine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Engine.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>071DB5F7CAD227F044BD4D711846D4B6335BD28F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:CocoaFlow/Engine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>071DB5F7CAD227F044BD4D711846D4B6335BD28F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>071DB5F7CAD227F044BD4D711846D4B6335BD28F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Engine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
