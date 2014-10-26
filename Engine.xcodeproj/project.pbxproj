@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC0119FD2DAE007D77E9 /* Engine.framework */; };
+		DA22CC1E19FD3042007D77E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC1C19FD3042007D77E9 /* Quick.framework */; };
+		DA22CC1F19FD3080007D77E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC1C19FD3042007D77E9 /* Quick.framework */; };
+		DA22CC2319FD30C4007D77E9 /* EngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */; };
+		DA22CC2419FD30C4007D77E9 /* EngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */; };
+		DA22CC2819FD3217007D77E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC2719FD3217007D77E9 /* Nimble.framework */; };
+		DA22CC2A19FD3222007D77E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC2919FD3222007D77E9 /* Nimble.framework */; };
 		DAEA5E3619CF1EBE004F822C /* Engine.h in Headers */ = {isa = PBXBuildFile; fileRef = DAEA5E3519CF1EBE004F822C /* Engine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAEA5E3C19CF1EBE004F822C /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEA5E3019CF1EBE004F822C /* Engine.framework */; };
-		DAEA5E4319CF1EBE004F822C /* EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5E4219CF1EBE004F822C /* EngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +37,16 @@
 
 /* Begin PBXFileReference section */
 		DA22CC0119FD2DAE007D77E9 /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA22CC0B19FD2DAE007D77E9 /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA22CC0B19FD2DAE007D77E9 /* Engine-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Engine-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA22CC1C19FD3042007D77E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Engine-ebqqwcimvenvoibbpqbhfgomkojj/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
+		DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineSpec.swift; sourceTree = "<group>"; };
+		DA22CC2719FD3217007D77E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../External/Nimble/build/Debug/Nimble.framework; sourceTree = "<group>"; };
+		DA22CC2919FD3222007D77E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../External/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		DAEA5E3019CF1EBE004F822C /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E3419CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAEA5E3519CF1EBE004F822C /* Engine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
-		DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = EngineTests.xctest; path = "Engine-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAEA5E3B19CF1EBE004F822C /* Engine-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Engine-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E4119CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAEA5E4219CF1EBE004F822C /* EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA22CC2A19FD3222007D77E9 /* Nimble.framework in Frameworks */,
+				DA22CC1F19FD3080007D77E9 /* Quick.framework in Frameworks */,
 				DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA22CC2819FD3217007D77E9 /* Nimble.framework in Frameworks */,
+				DA22CC1E19FD3042007D77E9 /* Quick.framework in Frameworks */,
 				DAEA5E3C19CF1EBE004F822C /* Engine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,9 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				DAEA5E3019CF1EBE004F822C /* Engine.framework */,
-				DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */,
+				DAEA5E3B19CF1EBE004F822C /* Engine-MacTests.xctest */,
 				DA22CC0119FD2DAE007D77E9 /* Engine.framework */,
-				DA22CC0B19FD2DAE007D77E9 /* EngineTests.xctest */,
+				DA22CC0B19FD2DAE007D77E9 /* Engine-iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,8 +127,8 @@
 		DAEA5E3F19CF1EBE004F822C /* EngineTests */ = {
 			isa = PBXGroup;
 			children = (
-				DAEA5E4219CF1EBE004F822C /* EngineTests.swift */,
 				DAEA5E4019CF1EBE004F822C /* Supporting Files */,
+				DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */,
 			);
 			path = EngineTests;
 			sourceTree = "<group>";
@@ -124,6 +136,9 @@
 		DAEA5E4019CF1EBE004F822C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA22CC2919FD3222007D77E9 /* Nimble.framework */,
+				DA22CC2719FD3217007D77E9 /* Nimble.framework */,
+				DA22CC1C19FD3042007D77E9 /* Quick.framework */,
 				DAEA5E4119CF1EBE004F822C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -183,7 +198,7 @@
 			);
 			name = "Engine-iOSTests";
 			productName = EngineTests;
-			productReference = DA22CC0B19FD2DAE007D77E9 /* EngineTests.xctest */;
+			productReference = DA22CC0B19FD2DAE007D77E9 /* Engine-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DAEA5E2F19CF1EBE004F822C /* Engine-Mac */ = {
@@ -219,7 +234,7 @@
 			);
 			name = "Engine-MacTests";
 			productName = EngineTests;
-			productReference = DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */;
+			productReference = DAEA5E3B19CF1EBE004F822C /* Engine-MacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -308,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA22CC2419FD30C4007D77E9 /* EngineSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAEA5E4319CF1EBE004F822C /* EngineTests.swift in Sources */,
+				DA22CC2319FD30C4007D77E9 /* EngineSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +404,7 @@
 		DA22CC1619FD2DAF007D77E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -401,12 +418,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DA22CC1719FD2DAF007D77E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -538,6 +557,7 @@
 		DAEA5E4A19CF1EBE004F822C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -550,12 +570,14 @@
 				INFOPLIST_FILE = EngineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DAEA5E4B19CF1EBE004F822C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",

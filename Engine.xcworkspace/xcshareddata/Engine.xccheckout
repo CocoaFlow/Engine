@@ -12,6 +12,10 @@
 	<dict>
 		<key>071DB5F7CAD227F044BD4D711846D4B6335BD28F</key>
 		<string>github.com:CocoaFlow/Engine.git</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>github.com:Quick/Nimble.git</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>github.com:Quick/Quick.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Engine.xcworkspace</string>
@@ -19,6 +23,10 @@
 	<dict>
 		<key>071DB5F7CAD227F044BD4D711846D4B6335BD28F</key>
 		<string>..</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>../External/Nimble</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>../External/Quick</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:CocoaFlow/Engine.git</string>
@@ -35,6 +43,22 @@
 			<string>071DB5F7CAD227F044BD4D711846D4B6335BD28F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Engine</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95438028B10BBB846574013D29F154A00556A9D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nimble</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Quick</string>
 		</dict>
 	</array>
 </dict>
