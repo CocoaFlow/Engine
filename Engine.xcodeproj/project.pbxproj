@@ -116,9 +116,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DAEA5E2F19CF1EBE004F822C /* Engine */ = {
+		DAEA5E2F19CF1EBE004F822C /* Engine-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAEA5E4619CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine" */;
+			buildConfigurationList = DAEA5E4619CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine-Mac" */;
 			buildPhases = (
 				DAEA5E2B19CF1EBE004F822C /* Sources */,
 				DAEA5E2C19CF1EBE004F822C /* Frameworks */,
@@ -129,14 +129,14 @@
 			);
 			dependencies = (
 			);
-			name = Engine;
+			name = "Engine-Mac";
 			productName = Engine;
 			productReference = DAEA5E3019CF1EBE004F822C /* Engine.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DAEA5E3A19CF1EBE004F822C /* EngineTests */ = {
+		DAEA5E3A19CF1EBE004F822C /* Engine-MacTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAEA5E4919CF1EBE004F822C /* Build configuration list for PBXNativeTarget "EngineTests" */;
+			buildConfigurationList = DAEA5E4919CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine-MacTests" */;
 			buildPhases = (
 				DAEA5E3719CF1EBE004F822C /* Sources */,
 				DAEA5E3819CF1EBE004F822C /* Frameworks */,
@@ -147,7 +147,7 @@
 			dependencies = (
 				DAEA5E3E19CF1EBE004F822C /* PBXTargetDependency */,
 			);
-			name = EngineTests;
+			name = "Engine-MacTests";
 			productName = EngineTests;
 			productReference = DAEA5E3B19CF1EBE004F822C /* EngineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -181,8 +181,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DAEA5E2F19CF1EBE004F822C /* Engine */,
-				DAEA5E3A19CF1EBE004F822C /* EngineTests */,
+				DAEA5E2F19CF1EBE004F822C /* Engine-Mac */,
+				DAEA5E3A19CF1EBE004F822C /* Engine-MacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,7 +225,7 @@
 /* Begin PBXTargetDependency section */
 		DAEA5E3E19CF1EBE004F822C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DAEA5E2F19CF1EBE004F822C /* Engine */;
+			target = DAEA5E2F19CF1EBE004F822C /* Engine-Mac */;
 			targetProxy = DAEA5E3D19CF1EBE004F822C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -324,7 +324,7 @@
 				INFOPLIST_FILE = Engine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Engine;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -341,7 +341,7 @@
 				INFOPLIST_FILE = Engine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Engine;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -390,21 +390,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAEA5E4619CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine" */ = {
+		DAEA5E4619CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAEA5E4719CF1EBE004F822C /* Debug */,
 				DAEA5E4819CF1EBE004F822C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		DAEA5E4919CF1EBE004F822C /* Build configuration list for PBXNativeTarget "EngineTests" */ = {
+		DAEA5E4919CF1EBE004F822C /* Build configuration list for PBXNativeTarget "Engine-MacTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAEA5E4A19CF1EBE004F822C /* Debug */,
 				DAEA5E4B19CF1EBE004F822C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
