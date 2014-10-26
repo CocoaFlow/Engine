@@ -372,7 +372,7 @@
 				);
 				INFOPLIST_FILE = Engine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Engine;
 				SDKROOT = iphoneos;
@@ -391,7 +391,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Engine/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Engine;
 				SDKROOT = iphoneos;
@@ -599,6 +599,7 @@
 				DA22CC1519FD2DAF007D77E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA22CC1919FD2DAF007D77E9 /* Build configuration list for PBXNativeTarget "Engine-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +608,7 @@
 				DA22CC1719FD2DAF007D77E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAEA5E2A19CF1EBE004F822C /* Build configuration list for PBXProject "Engine" */ = {
 			isa = XCConfigurationList;
