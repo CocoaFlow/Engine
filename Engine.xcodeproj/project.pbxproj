@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC0119FD2DAE007D77E9 /* Engine.framework */; };
-		DA22CC1E19FD3042007D77E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC1C19FD3042007D77E9 /* Quick.framework */; };
-		DA22CC1F19FD3080007D77E9 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC1C19FD3042007D77E9 /* Quick.framework */; };
 		DA22CC2319FD30C4007D77E9 /* EngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */; };
 		DA22CC2419FD30C4007D77E9 /* EngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */; };
-		DA22CC2819FD3217007D77E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC2719FD3217007D77E9 /* Nimble.framework */; };
-		DA22CC2A19FD3222007D77E9 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC2919FD3222007D77E9 /* Nimble.framework */; };
 		DAEA5E3619CF1EBE004F822C /* Engine.h in Headers */ = {isa = PBXBuildFile; fileRef = DAEA5E3519CF1EBE004F822C /* Engine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAEA5E3C19CF1EBE004F822C /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEA5E3019CF1EBE004F822C /* Engine.framework */; };
+		DAFAAF861A01861700633279 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFAAF831A0185AB00633279 /* Nimble.framework */; };
+		DAFAAF871A01861700633279 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC1C19FD3042007D77E9 /* Quick.framework */; };
+		DAFAAF881A01861C00633279 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFAAF831A0185AB00633279 /* Nimble.framework */; };
+		DAFAAF891A01861C00633279 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC1C19FD3042007D77E9 /* Quick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +38,14 @@
 /* Begin PBXFileReference section */
 		DA22CC0119FD2DAE007D77E9 /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA22CC0B19FD2DAE007D77E9 /* Engine-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Engine-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA22CC1C19FD3042007D77E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Engine-ebqqwcimvenvoibbpqbhfgomkojj/Build/Products/Debug/Quick.framework"; sourceTree = "<group>"; };
+		DA22CC1C19FD3042007D77E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineSpec.swift; sourceTree = "<group>"; };
-		DA22CC2719FD3217007D77E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../External/Nimble/build/Debug/Nimble.framework; sourceTree = "<group>"; };
-		DA22CC2919FD3222007D77E9 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "../External/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
 		DAEA5E3019CF1EBE004F822C /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E3419CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAEA5E3519CF1EBE004F822C /* Engine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
 		DAEA5E3B19CF1EBE004F822C /* Engine-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Engine-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E4119CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAFAAF831A0185AB00633279 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA22CC2A19FD3222007D77E9 /* Nimble.framework in Frameworks */,
-				DA22CC1F19FD3080007D77E9 /* Quick.framework in Frameworks */,
+				DAFAAF881A01861C00633279 /* Nimble.framework in Frameworks */,
+				DAFAAF891A01861C00633279 /* Quick.framework in Frameworks */,
 				DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,8 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA22CC2819FD3217007D77E9 /* Nimble.framework in Frameworks */,
-				DA22CC1E19FD3042007D77E9 /* Quick.framework in Frameworks */,
+				DAFAAF861A01861700633279 /* Nimble.framework in Frameworks */,
+				DAFAAF871A01861700633279 /* Quick.framework in Frameworks */,
 				DAEA5E3C19CF1EBE004F822C /* Engine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +135,7 @@
 		DAEA5E4019CF1EBE004F822C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DA22CC2919FD3222007D77E9 /* Nimble.framework */,
-				DA22CC2719FD3217007D77E9 /* Nimble.framework */,
+				DAFAAF831A0185AB00633279 /* Nimble.framework */,
 				DA22CC1C19FD3042007D77E9 /* Quick.framework */,
 				DAEA5E4119CF1EBE004F822C /* Info.plist */,
 			);
