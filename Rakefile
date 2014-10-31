@@ -17,7 +17,7 @@ end
 desc "Run the Engine Tests for Mac and iOS"
 task :test do
   Rake::Task['test:ios'].invoke
-  Rake::Task['test:mac'].invoke if not ENV['TRAVIS'] or is_yosemite_or_above
+  Rake::Task['test:mac'].invoke
 end
 
 task :default => 'test'
@@ -27,11 +27,6 @@ private
 
 def run_tests(scheme, sdk)
   sh("xcodebuild -workspace Engine.xcworkspace -scheme '#{scheme}' clean test; exit ${PIPESTATUS[0]}") rescue nil
-end
-
-def is_yosemite_or_above
-  os_version = `sw_vers -productVersion`.chomp
-  Gem::Version.new(os_version) >= Gem::Version.new('10.10')
 end
 
 def tests_failed(platform)
