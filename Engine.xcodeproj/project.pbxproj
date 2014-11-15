@@ -10,6 +10,16 @@
 		DA22CC0C19FD2DAF007D77E9 /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA22CC0119FD2DAE007D77E9 /* Engine.framework */; };
 		DA22CC2319FD30C4007D77E9 /* EngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */; };
 		DA22CC2419FD30C4007D77E9 /* EngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */; };
+		DA7F11921A17CC5900B9CF77 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F11911A17CC5900B9CF77 /* Network.swift */; };
+		DA7F11931A17CC5900B9CF77 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F11911A17CC5900B9CF77 /* Network.swift */; };
+		DA7F11951A17CC8C00B9CF77 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F11941A17CC8C00B9CF77 /* Component.swift */; };
+		DA7F11961A17CC8C00B9CF77 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F11941A17CC8C00B9CF77 /* Component.swift */; };
+		DA7F11981A17CCB200B9CF77 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F11971A17CCB200B9CF77 /* Port.swift */; };
+		DA7F11991A17CCB200B9CF77 /* Port.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F11971A17CCB200B9CF77 /* Port.swift */; };
+		DA7F119B1A17CCD600B9CF77 /* InPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F119A1A17CCD600B9CF77 /* InPort.swift */; };
+		DA7F119C1A17CCD600B9CF77 /* InPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F119A1A17CCD600B9CF77 /* InPort.swift */; };
+		DA7F119E1A17CCEC00B9CF77 /* OutPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F119D1A17CCEC00B9CF77 /* OutPort.swift */; };
+		DA7F119F1A17CCEC00B9CF77 /* OutPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7F119D1A17CCEC00B9CF77 /* OutPort.swift */; };
 		DAEA5E3619CF1EBE004F822C /* Engine.h in Headers */ = {isa = PBXBuildFile; fileRef = DAEA5E3519CF1EBE004F822C /* Engine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAEA5E3C19CF1EBE004F822C /* Engine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEA5E3019CF1EBE004F822C /* Engine.framework */; };
 		DAFAAF861A01861700633279 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAFAAF831A0185AB00633279 /* Nimble.framework */; };
@@ -40,6 +50,11 @@
 		DA22CC0B19FD2DAE007D77E9 /* Engine-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Engine-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA22CC1C19FD3042007D77E9 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA22CC2219FD30C4007D77E9 /* EngineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineSpec.swift; sourceTree = "<group>"; };
+		DA7F11911A17CC5900B9CF77 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DA7F11941A17CC8C00B9CF77 /* Component.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		DA7F11971A17CCB200B9CF77 /* Port.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Port.swift; sourceTree = "<group>"; };
+		DA7F119A1A17CCD600B9CF77 /* InPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPort.swift; sourceTree = "<group>"; };
+		DA7F119D1A17CCEC00B9CF77 /* OutPort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutPort.swift; sourceTree = "<group>"; };
 		DAEA5E3019CF1EBE004F822C /* Engine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Engine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAEA5E3419CF1EBE004F822C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAEA5E3519CF1EBE004F822C /* Engine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
@@ -111,6 +126,11 @@
 			children = (
 				DAEA5E3519CF1EBE004F822C /* Engine.h */,
 				DAEA5E3319CF1EBE004F822C /* Supporting Files */,
+				DA7F11911A17CC5900B9CF77 /* Network.swift */,
+				DA7F11941A17CC8C00B9CF77 /* Component.swift */,
+				DA7F11971A17CCB200B9CF77 /* Port.swift */,
+				DA7F119A1A17CCD600B9CF77 /* InPort.swift */,
+				DA7F119D1A17CCEC00B9CF77 /* OutPort.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -314,6 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7F11991A17CCB200B9CF77 /* Port.swift in Sources */,
+				DA7F119F1A17CCEC00B9CF77 /* OutPort.swift in Sources */,
+				DA7F11931A17CC5900B9CF77 /* Network.swift in Sources */,
+				DA7F11961A17CC8C00B9CF77 /* Component.swift in Sources */,
+				DA7F119C1A17CCD600B9CF77 /* InPort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7F11981A17CCB200B9CF77 /* Port.swift in Sources */,
+				DA7F119E1A17CCEC00B9CF77 /* OutPort.swift in Sources */,
+				DA7F11921A17CC5900B9CF77 /* Network.swift in Sources */,
+				DA7F11951A17CC8C00B9CF77 /* Component.swift in Sources */,
+				DA7F119B1A17CCD600B9CF77 /* InPort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +389,7 @@
 		DA22CC1419FD2DAF007D77E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -375,6 +406,7 @@
 				PRODUCT_NAME = Engine;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -382,6 +414,7 @@
 		DA22CC1519FD2DAF007D77E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -521,6 +554,7 @@
 		DAEA5E4719CF1EBE004F822C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -532,12 +566,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Engine;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		DAEA5E4819CF1EBE004F822C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
