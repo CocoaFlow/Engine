@@ -26,7 +26,7 @@ task :default => 'test'
 private
 
 def run_tests(scheme, sdk)
-  sh("xcodebuild -workspace Engine.xcworkspace -scheme '#{scheme}' clean test; exit ${PIPESTATUS[0]}") rescue nil
+  sh("xcodebuild -project Engine.xcodeproj -scheme '#{scheme}' clean test; exit ${PIPESTATUS[0]}") rescue nil
 end
 
 def tests_failed(platform)
