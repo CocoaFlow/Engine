@@ -1,3 +1,2 @@
 github "Quick/Nimble" == 0.2.0
-# github "Quick/Quick" == 0.2.0
-github "raven/Quick" == 0.2.1
+github "Quick/Quick" == 0.2.0

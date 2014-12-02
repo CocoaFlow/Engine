@@ -62,7 +62,6 @@ class TableOfContentsSpec: QuickSpec {
   - [Adding Quick as a Git Submodule](#adding-quick-as-a-git-submodule)
   - [Updating the Quick Submodule](#updating-the-quick-submodule)
   - [Cloning a Repository that Includes a Quick Submodule](#cloning-a-repository-that-includes-a-quick-submodule)
-- [How to Install Quick using Beta CocoaPods](#how-to-install-quick-using-beta-cocoapods)
 - [How to Install Quick File Templates](#how-to-install-quick-file-templates)
   - [Using Alcatraz](#using-alcatraz)
   - [Manually via the Rakefile](#manually-via-the-rakefile)
@@ -901,30 +900,6 @@ You can read more about Git submodules
 [here](http://git-scm.com/book/en/Git-Tools-Submodules). To see examples
 of Git submodules in action, check out any of the repositories linked to
 in the ["Who Uses Quick"](#who-uses-quick) section of this guide.
-
-## How to Install Quick using Beta CocoaPods
-
-If you would like to use Quick with CocoaPods today, you will need to use
-rubygem's [Bundler](http://bundler.io) to use the swift branch of CocoaPods. This 
-can be done by including a Gemfile that looks like this:
-
-```ruby
-source 'https://rubygems.org'
-
-gem 'cocoapods', :git => 'https://github.com/CocoaPods/CocoaPods.git', :branch => 'swift'
-gem 'cocoapods-core', :git => 'https://github.com/CocoaPods/Core.git', :branch => 'swift'
-gem 'xcodeproj',  :git => "https://github.com/CocoaPods/Xcodeproj.git", :branch => 'ext_build_settings'
-```
-
-Then run `bundle install` to start using Swift CocoaPods for just this project.
-Then in your Podfile, add the following to your test target.
-
-```
-  pod 'Quick', :git => "https://github.com/Quick/Quick", :head
-```
-
-Finally, run `bundle exec pod install`. The `bundle exec` ensures you're using
-the Swift CocoaPods version from your Gemfile.
 
 ## How to Install Quick File Templates
 
