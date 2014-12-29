@@ -14,11 +14,11 @@
 		<string>github.com:CocoaFlow/Engine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Engine.xcodeproj</string>
+	<string>Engine.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>071DB5F7CAD227F044BD4D711846D4B6335BD28F</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:CocoaFlow/Engine.git</string>
