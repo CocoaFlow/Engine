@@ -22,7 +22,6 @@ class NetworkSpec: QuickSpec {
             }
             
             it("should add edges") {
-                
                 waitUntil { done in
                     let intPacket = 1
                     let noOp = NoOpComponent<Int>(network)
