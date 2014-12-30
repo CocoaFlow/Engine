@@ -11,7 +11,6 @@ import Engine
 
 final internal class CallbackComponent<T>: Engine.Component {
     let network: Network
-    lazy var id: Int = ObjectIdentifier(self).hashValue
     
     convenience init(_ network: Network) {
         self.init(network, { packet in })

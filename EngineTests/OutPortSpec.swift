@@ -24,7 +24,9 @@ class OutPortSpec: QuickSpec {
             
             it("should belong to a process") {
                 let outPort = OutPort<Int>(process)
-                expect(outPort.process.id).to(equal(process.id))
+                let processId = ObjectIdentifier(process).hashValue
+                let outPortProcessId = ObjectIdentifier(outPort.process).hashValue
+                expect(outPortProcessId).to(equal(processId))
             }
             
             it("should have a unique ID") {

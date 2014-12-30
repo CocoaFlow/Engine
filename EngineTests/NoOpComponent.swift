@@ -11,7 +11,6 @@ import Engine
 
 final internal class NoOpComponent<T>: Engine.Component {
     let network: Network
-    lazy var id: Int = ObjectIdentifier(self).hashValue
     
     init(_ network: Network) {
         self.network = network

@@ -10,6 +10,5 @@ import Foundation
 
 public protocol Component: class {
     var network: Network { get }
-    var id: Int { get }
     init(_ network: Network)
 }
