@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
-		<string>github.com:quick/Nimble.git</string>
+		<string>github.com:Quick/Nimble</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Nimble.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:quick/Nimble.git</string>
+	<string>github.com:Quick/Nimble</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

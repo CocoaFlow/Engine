@@ -5,7 +5,7 @@ internal func identityAsString(value: AnyObject?) -> String {
     if value == nil {
         return "nil"
     }
-    return NSString(format: "<%p>", unsafeBitCast(value!, Int.self))
+    return NSString(format: "<%p>", unsafeBitCast(value!, Int.self)).description
 }
 
 internal func arrayAsString<T>(items: [T], joiner: String = ", ") -> String {
@@ -15,7 +15,7 @@ internal func arrayAsString<T>(items: [T], joiner: String = ", ") -> String {
     }
 }
 
-@objc protocol NMBStringer {
+@objc internal protocol NMBStringer {
     func NMB_stringify() -> String
 }
 
@@ -23,7 +23,7 @@ internal func stringify<S: SequenceType>(value: S) -> String {
     var generator = value.generate()
     var strings = [String]()
     var value: S.Generator.Element?
-    do {
+    repeat {
         value = generator.next()
         if value != nil {
             strings.append(stringify(value))
@@ -41,10 +41,10 @@ extension NSArray : NMBStringer {
 }
 
 internal func stringify<T>(value: T) -> String {
-    if value is Double {
-        return NSString(format: "%.4f", (value as Double))
+    if let value = value as? Double {
+        return NSString(format: "%.4f", (value)).description
     }
-    return toString(value)
+    return String(value)
 }
 
 internal func stringify<T>(value: T?) -> String {

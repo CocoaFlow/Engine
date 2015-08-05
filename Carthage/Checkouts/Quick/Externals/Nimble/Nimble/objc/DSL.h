@@ -15,6 +15,7 @@
 #endif
 
 NIMBLE_EXPORT NMBExpectation *NMB_expect(id(^actualBlock)(), const char *file, unsigned int line);
+NIMBLE_EXPORT NMBExpectation *NMB_expectAction(void(^actualBlock)(), const char *file, unsigned int line);
 
 NIMBLE_EXPORT id<NMBMatcher> NMB_equal(id expectedValue);
 NIMBLE_SHORT(id<NMBMatcher> equal(id expectedValue),
@@ -56,31 +57,69 @@ NIMBLE_EXPORT id<NMBMatcher> NMB_beLessThanOrEqualTo(NSNumber *expectedValue);
 NIMBLE_SHORT(id<NMBMatcher> beLessThanOrEqualTo(NSNumber *expectedValue),
              NMB_beLessThanOrEqualTo(expectedValue));
 
-NIMBLE_EXPORT id<NMBMatcher> NMB_beTruthy();
-NIMBLE_SHORT(id<NMBMatcher> beTruthy(),
+NIMBLE_EXPORT id<NMBMatcher> NMB_beTruthy(void);
+NIMBLE_SHORT(id<NMBMatcher> beTruthy(void),
              NMB_beTruthy());
 
-NIMBLE_EXPORT id<NMBMatcher> NMB_beFalsy();
-NIMBLE_SHORT(id<NMBMatcher> beFalsy(),
+NIMBLE_EXPORT id<NMBMatcher> NMB_beFalsy(void);
+NIMBLE_SHORT(id<NMBMatcher> beFalsy(void),
              NMB_beFalsy());
 
-NIMBLE_EXPORT id<NMBMatcher> NMB_beNil();
-NIMBLE_SHORT(id<NMBMatcher> beNil(),
+NIMBLE_EXPORT id<NMBMatcher> NMB_beTrue(void);
+NIMBLE_SHORT(id<NMBMatcher> beTrue(void),
+             NMB_beTrue());
+
+NIMBLE_EXPORT id<NMBMatcher> NMB_beFalse(void);
+NIMBLE_SHORT(id<NMBMatcher> beFalse(void),
+             NMB_beFalse());
+
+NIMBLE_EXPORT id<NMBMatcher> NMB_beNil(void);
+NIMBLE_SHORT(id<NMBMatcher> beNil(void),
              NMB_beNil());
 
-NIMBLE_EXPORT id<NMBMatcher> NMB_contain(id itemOrSubstring);
-NIMBLE_SHORT(id<NMBMatcher> contain(id itemOrSubstring),
-             NMB_contain(itemOrSubstring));
+NIMBLE_EXPORT id<NMBMatcher> NMB_beEmpty(void);
+NIMBLE_SHORT(id<NMBMatcher> beEmpty(void),
+             NMB_beEmpty());
+
+NIMBLE_EXPORT id<NMBMatcher> NMB_containWithNilTermination(id itemOrSubstring, ...) NS_REQUIRES_NIL_TERMINATION;
+#define NMB_contain(...) NMB_containWithNilTermination(__VA_ARGS__, nil)
+#ifndef NIMBLE_DISABLE_SHORT_SYNTAX
+#define contain(...) NMB_contain(__VA_ARGS__)
+#endif
 
 NIMBLE_EXPORT id<NMBMatcher> NMB_endWith(id itemElementOrSubstring);
 NIMBLE_SHORT(id<NMBMatcher> endWith(id itemElementOrSubstring),
              NMB_endWith(itemElementOrSubstring));
 
-NIMBLE_EXPORT NMBObjCRaiseExceptionMatcher *NMB_raiseException();
-NIMBLE_SHORT(NMBObjCRaiseExceptionMatcher *raiseException(),
+NIMBLE_EXPORT NMBObjCRaiseExceptionMatcher *NMB_raiseException(void);
+NIMBLE_SHORT(NMBObjCRaiseExceptionMatcher *raiseException(void),
              NMB_raiseException());
 
+NIMBLE_EXPORT id<NMBMatcher> NMB_match(id expectedValue);
+NIMBLE_SHORT(id<NMBMatcher> match(id expectedValue),
+             NMB_match(expectedValue));
+
+NIMBLE_EXPORT id<NMBMatcher> NMB_allPass(id matcher);
+NIMBLE_SHORT(id<NMBMatcher> allPass(id matcher),
+             NMB_allPass(matcher));
+
+// In order to preserve breakpoint behavior despite using macros to fill in __FILE__ and __LINE__,
+// define a builder that populates __FILE__ and __LINE__, and returns a block that takes timeout
+// and action arguments. See https://github.com/Quick/Quick/pull/185 for details.
+typedef void (^NMBWaitUntilTimeoutBlock)(NSTimeInterval timeout, void (^action)(void (^)(void)));
+typedef void (^NMBWaitUntilBlock)(void (^action)(void (^)(void)));
+
+NIMBLE_EXPORT NMBWaitUntilTimeoutBlock NMB_waitUntilTimeoutBuilder(NSString *file, NSUInteger line);
+NIMBLE_EXPORT NMBWaitUntilBlock NMB_waitUntilBuilder(NSString *file, NSUInteger line);
+
+#define NMB_waitUntilTimeout NMB_waitUntilTimeoutBuilder(@(__FILE__), __LINE__)
+#define NMB_waitUntil NMB_waitUntilBuilder(@(__FILE__), __LINE__)
+
 #ifndef NIMBLE_DISABLE_SHORT_SYNTAX
-#define expect(EXPR) NMB_expect(^id{ return (EXPR); }, __FILE__, __LINE__)
-#define expectAction(EXPR) NMB_expect(^id{ (EXPR); return nil; }, __FILE__, __LINE__)
+#define expect(...) NMB_expect(^id{ return (__VA_ARGS__); }, __FILE__, __LINE__)
+#define expectAction(BLOCK) NMB_expectAction((BLOCK), __FILE__, __LINE__)
+#define fail() NMB_expectAction((BLOCK), __FILE__, __LINE__)
+
+#define waitUntilTimeout NMB_waitUntilTimeout
+#define waitUntil NMB_waitUntil
 #endif

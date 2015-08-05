@@ -1,16 +1,19 @@
 import Foundation
 
-public func beGreaterThan<T: Comparable>(expectedValue: T?) -> MatcherFunc<T> {
-    return MatcherFunc { actualExpression, failureMessage in
+
+/// A Nimble matcher that succeeds when the actual value is greater than the expected value.
+public func beGreaterThan<T: Comparable>(expectedValue: T?) -> NonNilMatcherFunc<T> {
+    return NonNilMatcherFunc { actualExpression, failureMessage in
         failureMessage.postfixMessage = "be greater than <\(stringify(expectedValue))>"
-        return actualExpression.evaluate() > expectedValue
+        return try actualExpression.evaluate() > expectedValue
     }
 }
 
-public func beGreaterThan(expectedValue: NMBComparable?) -> MatcherFunc<NMBComparable> {
-    return MatcherFunc { actualExpression, failureMessage in
+/// A Nimble matcher that succeeds when the actual value is greater than the expected value.
+public func beGreaterThan(expectedValue: NMBComparable?) -> NonNilMatcherFunc<NMBComparable> {
+    return NonNilMatcherFunc { actualExpression, failureMessage in
         failureMessage.postfixMessage = "be greater than <\(stringify(expectedValue))>"
-        let actualValue = actualExpression.evaluate()
+        let actualValue = try actualExpression.evaluate()
         let matches = actualValue != nil && actualValue!.NMB_compare(expectedValue) == NSComparisonResult.OrderedDescending
         return matches
     }
@@ -26,10 +29,9 @@ public func >(lhs: Expectation<NMBComparable>, rhs: NMBComparable?) {
 
 extension NMBObjCMatcher {
     public class func beGreaterThanMatcher(expected: NMBComparable?) -> NMBObjCMatcher {
-        return NMBObjCMatcher { actualBlock, failureMessage, location in
-            let block = ({ actualBlock() as NMBComparable? })
-            let expr = Expression(expression: block, location: location)
-            return beGreaterThan(expected).matches(expr, failureMessage: failureMessage)
+        return NMBObjCMatcher(canMatchNil: false) { actualExpression, failureMessage in
+            let expr = actualExpression.cast { $0 as? NMBComparable }
+            return try! beGreaterThan(expected).matches(expr, failureMessage: failureMessage)
         }
     }
 }

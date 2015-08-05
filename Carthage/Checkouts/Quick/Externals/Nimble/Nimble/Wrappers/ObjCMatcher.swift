@@ -1,92 +1,77 @@
 import Foundation
 
-struct ObjCMatcherWrapper : Matcher {
-    let matcher: NMBMatcher
-    let to: String
-    let toNot: String
+public typealias MatcherBlock = (actualExpression: Expression<NSObject>, failureMessage: FailureMessage) -> Bool
+public typealias FullMatcherBlock = (actualExpression: Expression<NSObject>, failureMessage: FailureMessage, shouldNotMatch: Bool) -> Bool
+public class NMBObjCMatcher : NSObject, NMBMatcher {
+    let _match: MatcherBlock
+    let _doesNotMatch: MatcherBlock
+    let canMatchNil: Bool
 
-    func matches(actualExpression: Expression<NSObject>, failureMessage: FailureMessage) -> Bool {
-        failureMessage.to = to
-        let pass = matcher.matches(({ actualExpression.evaluate() }), failureMessage: failureMessage, location: actualExpression.location)
-        return pass
+    public init(canMatchNil: Bool, matcher: MatcherBlock, notMatcher: MatcherBlock) {
+        self.canMatchNil = canMatchNil
+        self._match = matcher
+        self._doesNotMatch = notMatcher
     }
 
-    func doesNotMatch(actualExpression: Expression<NSObject>, failureMessage: FailureMessage) -> Bool {
-        failureMessage.to = toNot
-        let pass = matcher.matches(({ actualExpression.evaluate() }), failureMessage: failureMessage, location: actualExpression.location)
-        return !pass
-    }
-}
-
-// Equivalent to Expectation, but simplified for ObjC objects only
-public class NMBExpectation : NSObject {
-    let _actualBlock: () -> NSObject!
-    var _negative: Bool
-    let _file: String
-    let _line: UInt
-    var _timeout: NSTimeInterval = 1.0
-
-    public init(actualBlock: () -> NSObject!, negative: Bool, file: String, line: UInt) {
-        self._actualBlock = actualBlock
-        self._negative = negative
-        self._file = file
-        self._line = line
+    public convenience init(matcher: MatcherBlock) {
+        self.init(canMatchNil: true, matcher: matcher)
     }
 
-    public var withTimeout: (NSTimeInterval) -> NMBExpectation {
-        return ({ timeout in self._timeout = timeout
-            return self
-        })
+    public convenience init(canMatchNil: Bool, matcher: MatcherBlock) {
+        self.init(canMatchNil: canMatchNil, matcher: matcher, notMatcher: ({ actualExpression, failureMessage in
+            return !matcher(actualExpression: actualExpression, failureMessage: failureMessage)
+        }))
     }
 
-    public var to: (matcher: NMBMatcher) -> Void {
-        return ({ matcher in
-            expect(file: self._file, line: self._line){ self._actualBlock() as NSObject? }.to(
-                ObjCMatcherWrapper(matcher: matcher, to: "to", toNot: "to not")
-            )
-        })
+    public convenience init(matcher: FullMatcherBlock) {
+        self.init(canMatchNil: true, matcher: matcher)
     }
 
-    public var toNot: (matcher: NMBMatcher) -> Void {
-        return ({ matcher in
-            expect(file: self._file, line: self._line){ self._actualBlock() as NSObject? }.toNot(
-                ObjCMatcherWrapper(matcher: matcher, to: "to", toNot: "to not")
-            )
-        })
+    public convenience init(canMatchNil: Bool, matcher: FullMatcherBlock) {
+        self.init(canMatchNil: canMatchNil, matcher: ({ actualExpression, failureMessage in
+            return matcher(actualExpression: actualExpression, failureMessage: failureMessage, shouldNotMatch: false)
+        }), notMatcher: ({ actualExpression, failureMessage in
+            return matcher(actualExpression: actualExpression, failureMessage: failureMessage, shouldNotMatch: true)
+        }))
     }
 
-    public var notTo: (matcher: NMBMatcher) -> Void { return toNot }
-
-    public var toEventually: (matcher: NMBMatcher) -> Void {
-        return ({ matcher in
-            expect(file: self._file, line: self._line){ self._actualBlock() as NSObject? }.toEventually(
-                ObjCMatcherWrapper(matcher: matcher, to: "to", toNot: "to not"),
-                timeout: self._timeout
-            )
-        })
-    }
-
-    public var toEventuallyNot: (matcher: NMBMatcher) -> Void {
-        return ({ matcher in
-            expect(file: self._file, line: self._line){ self._actualBlock() as NSObject? }.toEventuallyNot(
-                ObjCMatcherWrapper(matcher: matcher, to: "to", toNot: "to not"),
-                timeout: self._timeout
-            )
-        })
-    }
-}
-
-@objc public class NMBObjCMatcher : NMBMatcher {
-    let _matcher: (actualExpression: () -> NSObject?, failureMessage: FailureMessage, location: SourceLocation) -> Bool
-    init(matcher: (actualExpression: () -> NSObject?, failureMessage: FailureMessage, location: SourceLocation) -> Bool) {
-        self._matcher = matcher
+    private func canMatch(actualExpression: Expression<NSObject>, failureMessage: FailureMessage) -> Bool {
+        do {
+            if !canMatchNil {
+                if try actualExpression.evaluate() == nil {
+                    failureMessage.postfixActual = " (use beNil() to match nils)"
+                    return false
+                }
+            }
+        } catch let error {
+            failureMessage.actualValue = "an unexpected error thrown: \(error)"
+            return false
+        }
+        return true
     }
 
     public func matches(actualBlock: () -> NSObject!, failureMessage: FailureMessage, location: SourceLocation) -> Bool {
-        return _matcher(
-            actualExpression: ({ actualBlock() as NSObject? }),
-            failureMessage: failureMessage,
-            location: location)
+        let expr = Expression(expression: actualBlock, location: location)
+        let result = _match(
+            actualExpression: expr,
+            failureMessage: failureMessage)
+        if self.canMatch(Expression(expression: actualBlock, location: location), failureMessage: failureMessage) {
+            return result
+        } else {
+            return false
+        }
+    }
+
+    public func doesNotMatch(actualBlock: () -> NSObject!, failureMessage: FailureMessage, location: SourceLocation) -> Bool {
+        let expr = Expression(expression: actualBlock, location: location)
+        let result = _doesNotMatch(
+            actualExpression: expr,
+            failureMessage: failureMessage)
+        if self.canMatch(Expression(expression: actualBlock, location: location), failureMessage: failureMessage) {
+            return result
+        } else {
+            return false
+        }
     }
 }
 

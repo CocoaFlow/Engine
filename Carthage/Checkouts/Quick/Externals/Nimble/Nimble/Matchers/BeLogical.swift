@@ -1,55 +1,93 @@
 import Foundation
 
-public struct _BeBooleanTypeMatcher: BasicMatcher {
-    public let expectedValue: BooleanType
-    public let stringValue: String
-
-    public func matches(actualExpression: Expression<BooleanType>, failureMessage: FailureMessage) -> Bool {
-        failureMessage.postfixMessage = "be \(stringValue)"
-        return actualExpression.evaluate()?.boolValue == expectedValue.boolValue
+internal func matcherWithFailureMessage<T, M: Matcher where M.ValueType == T>(matcher: M, postprocessor: (FailureMessage) -> Void) -> FullMatcherFunc<T> {
+    return FullMatcherFunc { actualExpression, failureMessage, isNegation in
+        let pass: Bool
+        if isNegation {
+            pass = try matcher.doesNotMatch(actualExpression, failureMessage: failureMessage)
+        } else {
+            pass = try matcher.matches(actualExpression, failureMessage: failureMessage)
+        }
+        postprocessor(failureMessage)
+        return pass
     }
 }
 
-public struct _BeBoolMatcher: BasicMatcher {
-    public let expectedValue: BooleanType
-    public let stringValue: String
+// MARK: beTrue() / beFalse()
 
-    public func matches(actualExpression: Expression<Bool>, failureMessage: FailureMessage) -> Bool {
-        failureMessage.postfixMessage = "be \(stringValue)"
-        let actual = actualExpression.evaluate()
-        return (actual?.boolValue) == expectedValue.boolValue
+/// A Nimble matcher that succeeds when the actual value is exactly true.
+/// This matcher will not match against nils.
+public func beTrue() -> FullMatcherFunc<Bool> {
+    return matcherWithFailureMessage(equal(true)) { failureMessage in
+        failureMessage.postfixMessage = "be true"
     }
 }
 
-public func beTruthy() -> _BeBooleanTypeMatcher {
-    return _BeBooleanTypeMatcher(expectedValue: true, stringValue: "truthy")
+/// A Nimble matcher that succeeds when the actual value is exactly false.
+/// This matcher will not match against nils.
+public func beFalse() -> FullMatcherFunc<Bool> {
+    return matcherWithFailureMessage(equal(false)) { failureMessage in
+        failureMessage.postfixMessage = "be false"
+    }
 }
 
-public func beFalsy() -> _BeBooleanTypeMatcher {
-    return _BeBooleanTypeMatcher(expectedValue: false, stringValue: "falsy")
+// MARK: beTruthy() / beFalsy()
+
+/// A Nimble matcher that succeeds when the actual value is not logically false.
+public func beTruthy<T>() -> MatcherFunc<T> {
+    return MatcherFunc { actualExpression, failureMessage in
+        failureMessage.postfixMessage = "be truthy"
+        let actualValue = try actualExpression.evaluate()
+        if let actualValue = actualValue {
+            if let actualValue = actualValue as? BooleanType {
+                return actualValue.boolValue == true
+            }
+        }
+        return actualValue != nil
+    }
 }
 
-public func beTruthy() -> _BeBoolMatcher {
-    return _BeBoolMatcher(expectedValue: true, stringValue: "truthy")
-}
-
-public func beFalsy() -> _BeBoolMatcher {
-    return _BeBoolMatcher(expectedValue: false, stringValue: "falsy")
+/// A Nimble matcher that succeeds when the actual value is logically false.
+/// This matcher will match against nils.
+public func beFalsy<T>() -> MatcherFunc<T> {
+    return MatcherFunc { actualExpression, failureMessage in
+        failureMessage.postfixMessage = "be falsy"
+        let actualValue = try actualExpression.evaluate()
+        if let actualValue = actualValue {
+            if let actualValue = actualValue as? BooleanType {
+                return actualValue.boolValue != true
+            }
+        }
+        return actualValue == nil
+    }
 }
 
 extension NMBObjCMatcher {
     public class func beTruthyMatcher() -> NMBObjCMatcher {
-        return NMBObjCMatcher { actualBlock, failureMessage, location in
-            let block = ({ (actualBlock() as? NSNumber)?.boolValue ?? false })
-            let expr = Expression(expression: block, location: location)
-            return beTruthy().matches(expr, failureMessage: failureMessage)
+        return NMBObjCMatcher { actualExpression, failureMessage in
+            let expr = actualExpression.cast { ($0 as? NSNumber)?.boolValue ?? false as BooleanType? }
+            return try! beTruthy().matches(expr, failureMessage: failureMessage)
         }
     }
+
     public class func beFalsyMatcher() -> NMBObjCMatcher {
-        return NMBObjCMatcher { actualBlock, failureMessage, location in
-            let block = ({ (actualBlock() as? NSNumber)?.boolValue ?? false })
-            let expr = Expression(expression: block, location: location)
-            return beFalsy().matches(expr, failureMessage: failureMessage)
+        return NMBObjCMatcher { actualExpression, failureMessage in
+            let expr = actualExpression.cast { ($0 as? NSNumber)?.boolValue ?? false as BooleanType? }
+            return try! beFalsy().matches(expr, failureMessage: failureMessage)
+        }
+    }
+
+    public class func beTrueMatcher() -> NMBObjCMatcher {
+        return NMBObjCMatcher { actualExpression, failureMessage in
+            let expr = actualExpression.cast { ($0 as? NSNumber)?.boolValue ?? false as Bool? }
+            return try! beTrue().matches(expr, failureMessage: failureMessage)
+        }
+    }
+
+    public class func beFalseMatcher() -> NMBObjCMatcher {
+        return NMBObjCMatcher(canMatchNil: false) { actualExpression, failureMessage in
+            let expr = actualExpression.cast { ($0 as? NSNumber)?.boolValue ?? false as Bool? }
+            return try! beFalse().matches(expr, failureMessage: failureMessage)
         }
     }
 }
