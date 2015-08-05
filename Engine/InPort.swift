@@ -1,5 +1,3 @@
-import Foundation
-
 final public class InPort<T>: Port {
     public let process: Component
     lazy public var id: Int = ObjectIdentifier(self).hashValue

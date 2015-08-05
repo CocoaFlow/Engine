@@ -1,4 +1,3 @@
-import Foundation
 import Engine
 
 final internal class CallbackComponent<T>: Engine.Component {
