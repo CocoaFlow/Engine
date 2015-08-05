@@ -1,6 +1,6 @@
 import Engine
 
-final internal class CallbackComponent<T>: Engine.Component {
+final internal class CallbackComponent<T>: Component {
     let network: Network
     
     convenience init(_ network: Network) {

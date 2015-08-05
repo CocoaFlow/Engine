@@ -1,6 +1,6 @@
 import Engine
 
-final internal class NoOpComponent<T>: Engine.Component {
+final internal class NoOpComponent<T>: Component {
     let network: Network
     
     init(_ network: Network) {
