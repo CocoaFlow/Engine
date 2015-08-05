@@ -281,7 +281,9 @@
 		DAEA5E2719CF1EBE004F822C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = CocoaFlow;
 				TargetAttributes = {
 					DA22CC0019FD2DAE007D77E9 = {

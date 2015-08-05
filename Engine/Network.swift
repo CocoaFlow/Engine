@@ -15,7 +15,7 @@ final public class Network {
     private var processes: [Int:Component] = [:]
     
     public func addNode<T: Component>(name: String, _ component: T.Type) -> T {
-        let process = component(self)
+        let process = component.init(self)
         let id: Int = ObjectIdentifier(process).hashValue
         processes[id] = process
         return process
@@ -34,7 +34,7 @@ final public class Network {
             inPort.receive(packet)
         }
         else {
-            println("Unconnected out port on \"\(outPort.process)\" tried to send a packet.")
+            print("Unconnected out port on \"\(outPort.process)\" tried to send a packet.")
         }
     }
 }
