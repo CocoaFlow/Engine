@@ -8,7 +8,7 @@ final internal class CallbackComponent<T>: Component {
     }
     
     // Mark: - Callback
-    private typealias Callback = (T) -> Void
+    typealias Callback = (T) -> Void
     private let callback: Callback
     
     init(_ network: Network, _ callback: Callback) {
