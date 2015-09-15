@@ -3,10 +3,6 @@ import Engine
 final internal class CallbackComponent<T>: Component {
     let network: Network
     
-    convenience init(_ network: Network) {
-        self.init(network, { packet in })
-    }
-    
     // Mark: - Callback
     typealias Callback = (T) -> Void
     private let callback: Callback
