@@ -4,8 +4,7 @@ final public class Network {
     // MARK: - Processes
     private var processes: [Int:Component] = [:]
     
-    public func addNode<T: Component>(name: String, _ component: T.Type) -> T {
-        let process = component.init(self)
+    public func addNode<T: Component>(name: String, _ process: T) -> T {
         processes[process.id] = process
         return process
     }
