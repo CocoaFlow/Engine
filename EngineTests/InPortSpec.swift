@@ -14,15 +14,15 @@ class InPortSpec: QuickSpec {
             }
             
             it("should belong to a process") {
-                let inPort = InPort<Int>(process) { packet in }
+                let inPort = InPort<Int>(process) { _ in }
                 let processId = ObjectIdentifier(process).hashValue
                 let inPortProcessId = ObjectIdentifier(inPort.process).hashValue
                 expect(inPortProcessId).to(equal(processId))
             }
             
             it("should have a unique ID") {
-                let firstInPort = InPort<Int>(process) { packet in }
-                let secondInPort = InPort<Int>(process) { packet in }
+                let firstInPort = InPort<Int>(process) { _ in }
+                let secondInPort = InPort<Int>(process) { _ in }
                 expect(firstInPort.id).toNot(equal(secondInPort.id))
             }
             
