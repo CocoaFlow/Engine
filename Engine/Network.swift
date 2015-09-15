@@ -6,8 +6,7 @@ final public class Network {
     
     public func addNode<T: Component>(name: String, _ component: T.Type) -> T {
         let process = component.init(self)
-        let id: Int = ObjectIdentifier(process).hashValue
-        processes[id] = process
+        processes[process.id] = process
         return process
     }
     
