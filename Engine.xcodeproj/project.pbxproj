@@ -15,8 +15,8 @@
 		2C02272C1A52975000D5B5BC /* OutPortSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C02272A1A52975000D5B5BC /* OutPortSpec.swift */; };
 		2C0227311A52A18200D5B5BC /* NetworkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227301A52A18200D5B5BC /* NetworkSpec.swift */; };
 		2C0227321A52A18200D5B5BC /* NetworkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227301A52A18200D5B5BC /* NetworkSpec.swift */; };
-		2C0227341A52A23900D5B5BC /* NoOpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227331A52A23900D5B5BC /* NoOpComponent.swift */; };
-		2C0227351A52A23900D5B5BC /* NoOpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227331A52A23900D5B5BC /* NoOpComponent.swift */; };
+		2C0227341A52A23900D5B5BC /* PassThroughComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227331A52A23900D5B5BC /* PassThroughComponent.swift */; };
+		2C0227351A52A23900D5B5BC /* PassThroughComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227331A52A23900D5B5BC /* PassThroughComponent.swift */; };
 		2C0227371A52A80B00D5B5BC /* CallbackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227361A52A80B00D5B5BC /* CallbackComponent.swift */; };
 		2C0227381A52A80B00D5B5BC /* CallbackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0227361A52A80B00D5B5BC /* CallbackComponent.swift */; };
 		DA047B881A2D96290090CDDD /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA047B861A2D96290090CDDD /* Nimble.framework */; };
@@ -60,7 +60,7 @@
 		2C0227261A52967200D5B5BC /* InPortSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InPortSpec.swift; sourceTree = "<group>"; };
 		2C02272A1A52975000D5B5BC /* OutPortSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutPortSpec.swift; sourceTree = "<group>"; };
 		2C0227301A52A18200D5B5BC /* NetworkSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSpec.swift; sourceTree = "<group>"; };
-		2C0227331A52A23900D5B5BC /* NoOpComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOpComponent.swift; sourceTree = "<group>"; };
+		2C0227331A52A23900D5B5BC /* PassThroughComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassThroughComponent.swift; sourceTree = "<group>"; };
 		2C0227361A52A80B00D5B5BC /* CallbackComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallbackComponent.swift; sourceTree = "<group>"; };
 		DA047B861A2D96290090CDDD /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA047B871A2D96290090CDDD /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +176,7 @@
 				DA047B861A2D96290090CDDD /* Nimble.framework */,
 				DA047B871A2D96290090CDDD /* Quick.framework */,
 				DAEA5E4119CF1EBE004F822C /* Info.plist */,
-				2C0227331A52A23900D5B5BC /* NoOpComponent.swift */,
+				2C0227331A52A23900D5B5BC /* PassThroughComponent.swift */,
 				2C0227361A52A80B00D5B5BC /* CallbackComponent.swift */,
 			);
 			name = "Supporting Files";
@@ -371,7 +371,7 @@
 				2C0227251A52963400D5B5BC /* BareComponent.swift in Sources */,
 				2C0227321A52A18200D5B5BC /* NetworkSpec.swift in Sources */,
 				2C0227281A52967200D5B5BC /* InPortSpec.swift in Sources */,
-				2C0227351A52A23900D5B5BC /* NoOpComponent.swift in Sources */,
+				2C0227351A52A23900D5B5BC /* PassThroughComponent.swift in Sources */,
 				2C0227381A52A80B00D5B5BC /* CallbackComponent.swift in Sources */,
 				2C02272C1A52975000D5B5BC /* OutPortSpec.swift in Sources */,
 			);
@@ -396,7 +396,7 @@
 				2C0227241A52963400D5B5BC /* BareComponent.swift in Sources */,
 				2C0227311A52A18200D5B5BC /* NetworkSpec.swift in Sources */,
 				2C0227271A52967200D5B5BC /* InPortSpec.swift in Sources */,
-				2C0227341A52A23900D5B5BC /* NoOpComponent.swift in Sources */,
+				2C0227341A52A23900D5B5BC /* PassThroughComponent.swift in Sources */,
 				2C0227371A52A80B00D5B5BC /* CallbackComponent.swift in Sources */,
 				2C02272B1A52975000D5B5BC /* OutPortSpec.swift in Sources */,
 			);

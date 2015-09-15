@@ -15,7 +15,7 @@ class NetworkSpec: QuickSpec {
             it("should add edges") {
                 waitUntil { done in
                     let intPacket = 1
-                    let noOp = NoOpComponent<Int>(network)
+                    let noOp = PassThroughComponent<Int>(network)
                     
                     let callback = CallbackComponent<Int>(network) { packet in
                         expect(packet).to(equal(intPacket))

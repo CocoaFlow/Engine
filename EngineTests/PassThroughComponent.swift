@@ -1,6 +1,6 @@
 import Engine
 
-final internal class NoOpComponent<T>: Component {
+final internal class PassThroughComponent<T>: Component {
     let network: Network
     
     init(_ network: Network) {
