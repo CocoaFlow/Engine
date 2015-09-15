@@ -13,7 +13,7 @@ final public class Network {
     // MARK: - Connections
     private var connections: [Int:Port] = [:]
     
-    public func addEdge<T>(fromPort: OutPort<T>, _ toPort: InPort<T>) {
+    public func addConnection<T>(fromPort: OutPort<T>, _ toPort: InPort<T>) {
         connections[fromPort.id] = toPort
     }
     

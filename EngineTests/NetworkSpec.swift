@@ -22,7 +22,7 @@ class NetworkSpec: QuickSpec {
                         done()
                     }
                     
-                    network.addEdge(noOp.outPort, callback.inPort)
+                    network.addConnection(noOp.outPort, callback.inPort)
                     noOp.inPort.receive(intPacket)
                 }
             }
